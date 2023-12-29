@@ -1,38 +1,296 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
 .App {
   text-align: center;
+ 
+  font-family: 'Montserrat', sans-serif; /* Set default font for the app */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.main {
+  width: 100vw; /* Full width */
+  height: 100vh; /* Full height, adjust if you want the video to be shorter */
+  position: absolute; /* Establish a positioning context */
+  z-index: 1; /* Make sure this is above the base layer */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Style the video element */
+.main video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Cover the container without stretching */
+  position: absolute; /* Position absolutely within the .main container */
+  top: 0;
+  left: 0;
 }
 
 .App-header {
-  background-color: #282c34;
+  position: relative;
+  width: 45%;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
+  color: black;
+  z-index: 1; /* Ensure the header content is above the video */
+}
+
+.App-header h1 {
+  font-family: 'Nunito', sans-serif;
+  color: #F3B140;
+}
+
+.App-header p {
+  font-family: 'Montserrat', sans-serif;
+  color: #E1EEC7;
+  font-size: 19px;
+}
+
+/* General styles for the subheader section */
+#subheader {
+  padding: 2rem 0;
+  background-color: white; /* Light grey background */
+}
+
+/* Container to give some breathing room */
+.container-fluid.nav_bg {
+  padding: 1rem;
+}
+
+/* Row to align items */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Column for text content */
+.col-md-6 {
+  padding-top: 1rem;
+}
+
+/* Header styles */
+#subheader h1 {
+  font-size: 2.2rem;
+  font-family: 'Nunito', sans-serif;
+  color:#91A56B;
+  margin-bottom: 1.0rem;
+}
+
+#subheader p {
+  font-size: 1.1rem;
+  color: black;
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 1rem; /* Add margin below the <p> */
+}
+
+/* Button styles */
+.mt-3 .btn-get-started {
+  padding: 0.65rem 1.5rem;
+  background-color: #F3B140; 
+  border-color: #F3B140 ;
+  color: white;
+  text-decoration: none;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s ease;
+  margin-top: 1rem; /* Add margin above the button */
+}
+
+.mt-3 .btn-get-started:hover {
+  background-color: #CD9432 ; /* Darker shade on hover */
+  border-color: #F3B140 ;
+  text-decoration: none; /* No underline on hover */
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+
+
+/* Column for the image */
+.header-img {
+  padding-top: 1rem;
 }
 
-@keyframes App-logo-spin {
+/* Image styles */
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+  animation: fadeIn 2s ease-in-out; /* Fade-in animation */
+}
+
+/* Keyframes for animations */
+@keyframes fadeIn {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
   }
+}
+
+
+
+
+/*Form CSS */
+.prediction-form-container {
+  background-color: #fff4dd ; /* Soft background color */
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 600px; /* Adjust width as needed */
+  margin: 2rem auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+
+/* Frosted Glass Effect */
+  /* Other styles */
+  backdrop-filter: blur(10px); /* This provides the frosted glass effect */
+  /* background-color: rgba(164, 58, 58, 0.75);  Use rgba to give a transparent look */
+  border: 1px solid rgba(255, 255, 255, 0.18); /* Optional: adds a light border for better effect */
+}
+
+
+
+
+
+.step-indicator {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.step-indicator .step {
+  width: 25px;
+  height: 25px;
+  background-color: #ffd699; /* Adjust color as needed */
+  border-radius: 50%;
+  position: relative;
+}
+
+
+.form-title {
+  margin-top: 1.5rem;
+  font-size: 1.8rem;
+  font-weight: bold;
+  font-family: 'Nunito', sans-serif;
+  color: #080808; /* Dark text for better readability */
+  margin-bottom: 0.5rem;
+}
+
+.form-description {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.form-fields .form-group {
+  margin-bottom: 1rem;
+}
+
+.form-fields label {
+  display: block;
+  color: black;
+}
+
+.form-fields input,
+.form-fields select {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.25rem;
+  border: 1px solid #ddd; /* A light border for the input */
+  border-radius: 5px;
+  box-sizing: border-box; /* Ensures padding doesn't affect width */
+}
+
+.submit-button {
+  background-color: #ffcc80; /* Matching button color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.submit-button:hover {
+  background-color: #ffb366; /* Slightly darker on hover */
+}
+
+
+
+/*Modal CSS*/
+
+.modal-content {
+  background: linear-gradient(135deg, #E5E6E5 0%, #E1EEC7 100%);
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+  border-bottom: none;
+  position: relative;
+  padding-bottom: 10px;
+ 
+}
+
+.modal-header .close {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  border: none;
+  background: none;
+  font-size: 1.5em;
+}
+
+.modal-title {
+  font-weight: bold;
+  color: #333;
+  font-size: 1.5em;
+}
+
+.modal-body {
+  position: relative;
+  padding: 20px;
+ 
+}
+
+
+
+/* Prediction Results */
+
+.prediction-result {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.disclaimer {
+  margin-top: 10px;
+  font-size: 0.9em;
+  color: #666; /* Adjust color as needed */
+}
+
+.personalized-bill {
+  color: #91A56B;
+  font-size: bold;
+
+}
+
+.view-tips-button {
+  background-color: #F3B140;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.view-tips-button:hover {
+  background-color: #d99a2e; /* Slightly darker on hover */
 }
