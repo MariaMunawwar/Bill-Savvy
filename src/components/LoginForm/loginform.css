@@ -1,0 +1,79 @@
+.loginformdiv{
+    position:relative;
+    top:30px;
+    max-width: 40vw;
+    height:90vh;
+    background-color: #E1EEC7;
+    display: inline-block;
+    align-items: center;
+    text-align: center;
+    /* top:175px; */
+    padding:20px;
+    box-sizing: border-box;
+}
+
+#loginform{
+    background-color: #E1EEC7;
+    display: inline-block;
+    flex-direction: column;
+    align-items: center;
+}
+
+#loginform-header{
+    font-size: 32px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.emailinput,
+.passwordinput {
+  border: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 40px;
+  /* left: -10px; */
+}
+.loginChild1 {
+  top: 70px;
+}
+
+.registerButton {
+    position: absolute;
+    top: 110px;
+    /* left: 740px; */
+  }
+
+  .forgetPassword {
+    /* position: absolute; */
+    top: 120px;
+    /* left: 770px; */
+    color: red;
+  }
+
+  #link{
+    position: relative;
+    text-decoration: none;
+    width:100px;
+    top:150px;
+    left:10px;
+    color: black;
+  }
+  .inputwidth {
+    width: 100%; /* or any other width value */
+}
+
+  @media only screen and (max-width:768px){
+    .loginformdiv{
+      left:2vw;
+      top:2vh;
+      max-width:93vw;
+    }
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 1020px) {
+  .loginformdiv{
+    top:-3vh;
+    height:70vh;
+  }
+  
+}

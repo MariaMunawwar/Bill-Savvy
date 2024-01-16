@@ -1,0 +1,52 @@
+.mainS{
+    position: relative;
+    /* top:-40px; */
+    background-color: #e5e6e5;
+    max-width: 40vw;
+    height:90vh;
+    display: inline-block;
+    /* top:10px; */
+    padding:20px;
+        
+}
+.bar{
+    width:40vw;
+    height:3vh;
+    padding:0px;
+}
+#greenbar{
+    margin-top: 30px;
+    background-color: #91A56B;
+    /* padding-top: 5vh; */
+}
+#orangebar{
+    background-color: #F3B140;
+}
+#login-header{
+    font-size: 60px;
+}
+#login-text{
+    font-size: 20px;
+}
+.Pattern{
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  /* width: 50%; */
+  height:230px;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .main{
+        height:70vh;
+    }
+    .Pattern{
+        display: block;
+        
+      margin-left: auto;
+      margin-right: auto;
+      /* width: 50%; */
+      height:20vw;
+    }
+    
+  }

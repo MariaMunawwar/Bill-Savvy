@@ -1,0 +1,153 @@
+.contact{
+    background-color: white;
+    box-shadow: 0 0 30px rgb(50, 53, 56);
+    margin:3vw;
+    color: white;
+    /* border-radius: 20px; */
+    padding: 0.5vw;
+    padding-top: -100vw;;
+}
+.contactheader{
+    font-size: 50px;
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    margin-top: -50vw;
+    margin-bottom: 10px;
+    color: black;
+}
+.contactheader span{
+    color:#91A56B ;
+}
+.contactitems{
+    display: flex;
+    gap:0.15vw;
+    align-items: center;
+    justify-content: center;
+}
+.contact-image{
+    margin-left:50px;
+    width:410px;
+    height:550px;
+}
+.contactform{
+    background-color:#CDD583;
+    height:35vw;
+    /* border: 1px solid white; */
+    border-radius: 20px;
+    width:30vw;
+}
+
+.submitform{
+    display: flex;
+    flex-direction: column;
+    gap:1.5vw;
+    padding: 2vw;
+    
+}
+.submitform input{
+    border: none;
+    outline: none;
+    border-bottom: 2px solid white;
+    font-size: 16px;
+    background-color:#CDD583;
+    width:25vw;
+    padding: 10px;
+    color: white;
+}
+.submitform textarea{
+    background-color:#CDD583;
+    font-size: 16px;
+    padding: 10px;
+    height:10vw;
+    color: white;
+
+}
+.submit-btn{
+    cursor: pointer;
+    margin-left: 5vw;
+    width:150px;
+    height: 40px;
+    border-radius: 10px;
+    color: white;
+    background-color: black;
+    font-size: 17px;
+    font-family: 'Raleway', sans-serif;
+    border: none;
+    transition: background-color 0.3s, color 0.3s;
+    
+}
+.submit-btn:hover{
+    background-color: green;
+}
+
+#toast {
+    visibility: hidden; /* Hidden by default. Visible on click */
+    min-width: 250px; /* Set a default minimum width */
+    margin-left: -125px; /* Divide value of min-width by 2 */
+    background-color: green; /* Black background color */
+    color: #fff; /* White text color */
+    text-align: center; /* Centered text */
+    border-radius: 2px; /* Rounded borders */
+    padding: 16px; /* Padding */
+    position: fixed; /* Sit on top of the screen */
+    z-index: 1; /* Add a z-index if needed */
+    left: 50%; /* Center the snackbar */
+    bottom: 30px; /* 30px from the bottom */
+  }
+  
+  /* Show the snackbar when clicking on a button (class added with JavaScript) */
+  #toast.show{
+    visibility: visible; /* Show the snackbar */
+    /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+    However, delay the fade out process for 2.5 seconds */
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  }
+
+  @keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+  }
+  @keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+  }
+
+  
+@media only screen and (max-width: 767px) {
+    .contact-image{
+        display:none;
+    }
+    .contactform{
+        height:85vw;
+        width:65vw;
+    }
+    .submitform input{
+        height:3vw;
+        width:55vw;
+    }
+    .submitform textarea{
+        height:30vw;
+    }
+    .submit-btn{
+        height:9vw;
+        margin-left: 10vw;
+    }
+  }
+  
+  @media only screen and (min-width: 768px) and (max-width: 1023px) {
+    .contact-image{
+        height:29vh;
+        width:36vw;
+    }
+    .submitform input{
+        height:1vw;
+    }
+    .submitform textarea{
+        height:10vw;
+    }
+    .submit-btn{
+        height:3vw;
+        margin-left: 3vw;
+    }
+  }

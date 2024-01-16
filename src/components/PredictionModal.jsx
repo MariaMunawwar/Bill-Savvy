@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
+import {Link} from "react-router-dom";
+import {jwtDecode} from 'jwt-decode'; // Ensure jwt-decode is installed
+
 import axios from 'axios';
 import '../App.css';
 
-const PredictionForm = () => {
+const PredictionModal = () => {
 
   //For prediction results
   const [predictionMade, setPredictionMade] = useState(false);
@@ -61,6 +64,8 @@ const PredictionForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const token = localStorage.getItem("token");
+    const userId = jwtDecode(token).id;
 
     if (!isValidStep(3)) {
       alert("Please fill in all required fields correctly.");
@@ -83,8 +88,28 @@ const PredictionForm = () => {
     try {
       const response = await axios.post('http://127.0.0.1:8000/api/predict/', convertedData);
       setPredictionResult(response.data.prediction);
+      const predictionResult = response.data.prediction;
       setPredictionMade(true); // Indicate that prediction has been made
       //alert(`Prediction: ${response.data.prediction}`);
+      // Now, send the original formData andthe prediction result to the Node.js backend 
+      // await axios.post ('http://localhost:3001/api/save-form-data/', {
+// ...formData, predictedBill:
+ //response.data.prediction
+ // });
+
+ const saveSurveyResponse = await axios.post('http://localhost:3001/api/save-form-data', {
+  ...formData,
+  predictedBill: predictionResult,
+  userId: userId // Include the userId from the JWT
+});
+
+// Handle the next steps based on the response from the survey data save
+if (saveSurveyResponse.status === 201) {
+  console.log('Survey data saved successfully');
+  // You can redirect or display a message based on the successful save
+}
+
+//Handle the next steps after successtul submission (e.g., redirect or show a message)
     } catch (error) {
       console.error('Error in submitting prediction form', error);
     }
@@ -103,7 +128,9 @@ const PredictionForm = () => {
           Disclaimer: This is an estimated bill and may vary based on actual usage and other factors.
         </p>
         <p className='personalized-bill'>If you want to further optimize your bill, you can apply personalized tips to your predicted bill.</p>
-      <button onClick={handleViewTips} className="view-tips-button">View Tips</button>
+        <Link to='/tips' id="view-tips-button">View Tips</Link>
+
+
       </div>
     );
   };
@@ -246,7 +273,7 @@ const PredictionForm = () => {
   );
 };
 
-export default PredictionForm;
+export default PredictionModal;
 
 
 
