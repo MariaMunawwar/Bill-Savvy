@@ -3,7 +3,7 @@ Welcome to the Bill Savvy Prediction Project! This repository is the home for a 
 
 #Repository Structure
 billpred/ - This directory contains the Django application files.
-billenv/ - The virtual environment for our project. It encapsulates all the dependencies required by the project, ensuring consistent behavior across various development and production environments.
+billenv/ - The virtual environment for our project. 
 frontend and backend - Located on the master branch.
 
 #Inside the billpred Directory
